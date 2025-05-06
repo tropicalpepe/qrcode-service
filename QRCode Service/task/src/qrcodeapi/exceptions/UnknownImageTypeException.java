@@ -1,7 +1,7 @@
 package qrcodeapi.exceptions;
 
 public class UnknownImageTypeException extends RuntimeException {
-    public UnknownImageTypeException(String message) {
-        super(message);
+    public UnknownImageTypeException() {
+        super("Only png, jpeg and gif image types are supported");
     }
 }

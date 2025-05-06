@@ -28,7 +28,7 @@ public enum ImageType {
             if (status.getValue().equals(value))
                 return status;
         }
-        throw new UnknownImageTypeException("Only png, jpeg and gif image types are supported");
+        throw new UnknownImageTypeException();
     }
 
 }

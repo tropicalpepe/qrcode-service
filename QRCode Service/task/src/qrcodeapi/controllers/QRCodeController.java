@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import qrcodeapi.exceptions.InvalidImageSizeException;
 import qrcodeapi.shared.ImageType;
 
 import java.awt.*;
@@ -25,7 +26,10 @@ public class QRCodeController {
     @GetMapping("/qrcode")
     public ResponseEntity<BufferedImage> qrcode(
             @RequestParam("size") int size,
-            @RequestParam("type") ImageType imageType) {
+            @RequestParam("type") String type) {
+        validateSize(size);
+        ImageType imageType = ImageType.fromValue(type);
+
         BufferedImage bufferedImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = bufferedImage.createGraphics();
 
@@ -36,5 +40,11 @@ public class QRCodeController {
                 .ok()
                 .contentType(imageType.getMediaType())
                 .body(bufferedImage);
+    }
+
+    private void validateSize(int size) {
+        if (size < 150 || size > 350) {
+            throw new InvalidImageSizeException();
+        }
     }
 }
