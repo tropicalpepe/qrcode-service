@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2.318s</div>
+<div class="counter">6.710s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,24 +50,90 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div id="tabs">
+<div class="tab-container">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
 </li>
 </ul>
-<div id="tab0" class="tab">
+<div class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="start"></a>
+<h3 class="failures">start</h3>
+<span class="code">
+<pre>java.lang.AssertionError: Wrong answer in test #2
+
+Response: GET /api/qrcode?size=150&amp;type=png
+
+Response body does not contain a correct image:
+Expected image hash b67a6f17fe353b997585e65e2903ab7b, but was a370a8d3e1ee0f0184132a3c3b5d2952
+Make sure the size, the contents and the format of the image are correct.
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:208)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:112)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:40)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:54)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:183)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+</div>
+<div class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -78,13 +144,13 @@
 </tr>
 </thead>
 <tr>
-<td class="success">start</td>
-<td class="success">2.318s</td>
-<td class="success">passed</td>
+<td class="failures">start</td>
+<td class="failures">6.710s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div class="tab">
 <h2>Standard output</h2>
 <span class="code">
 <pre>?[1;31m
@@ -98,19 +164,19 @@ Start test 1?[0m
 ?[0m?[0;34m =========|_|==============|___/=/_/_/_/
 ?[0m?[0;34m :: Spring Boot ::                (v3.2.0)
 ?[0m?[0;34m
-?[0m?[0;34m2025-05-05T00:02:40.540+03:00  INFO 24052 --- [    Test worker] qrcodeapi.Application                    : Starting Application using Java 21.0.6 with PID 24052 (started by david in C:\Projects\java\QRCode Service\QRCode Service\task)
-?[0m?[0;34m2025-05-05T00:02:40.543+03:00  INFO 24052 --- [    Test worker] qrcodeapi.Application                    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-?[0m?[0;34m2025-05-05T00:02:41.460+03:00  INFO 24052 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-?[0m?[0;34m2025-05-05T00:02:41.469+03:00  INFO 24052 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2025-05-05T00:02:41.469+03:00  INFO 24052 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
-?[0m?[0;34m2025-05-05T00:02:41.515+03:00  INFO 24052 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2025-05-05T00:02:41.516+03:00  INFO 24052 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 938 ms
-?[0m?[0;34m2025-05-05T00:02:41.987+03:00  INFO 24052 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2025-05-05T00:02:42.036+03:00  INFO 24052 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-?[0m?[0;34m2025-05-05T00:02:42.045+03:00  INFO 24052 --- [    Test worker] qrcodeapi.Application                    : Started Application in 1.766 seconds (process running for 2.375)
-?[0;34m2025-05-05T00:02:42.315+03:00  INFO 24052 --- [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2025-05-05T00:02:42.315+03:00  INFO 24052 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2025-05-05T00:02:42.316+03:00  INFO 24052 --- [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+?[0m?[0;34m2025-05-06T21:26:05.534+03:00  INFO 17592 --- [    Test worker] qrcodeapi.Application                    : Starting Application using Java 17.0.13 with PID 17592 (started by david in C:\Projects\java\QRCode Service\QRCode Service\task)
+?[0m?[0;34m2025-05-06T21:26:05.553+03:00  INFO 17592 --- [    Test worker] qrcodeapi.Application                    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+?[0m?[0;34m2025-05-06T21:26:08.546+03:00  INFO 17592 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+?[0m?[0;34m2025-05-06T21:26:08.561+03:00  INFO 17592 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2025-05-06T21:26:08.562+03:00  INFO 17592 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+?[0m?[0;34m2025-05-06T21:26:08.647+03:00  INFO 17592 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2025-05-06T21:26:08.651+03:00  INFO 17592 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2995 ms
+?[0m?[0;34m2025-05-06T21:26:10.226+03:00  INFO 17592 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2025-05-06T21:26:10.316+03:00  INFO 17592 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+?[0m?[0;34m2025-05-06T21:26:10.331+03:00  INFO 17592 --- [    Test worker] qrcodeapi.Application                    : Started Application in 5.58 seconds (process running for 6.539)
+?[0;34m2025-05-06T21:26:10.786+03:00  INFO 17592 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2025-05-06T21:26:10.788+03:00  INFO 17592 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2025-05-06T21:26:10.788+03:00  INFO 17592 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
 ?[0m?[1;31m
 Start test 2?[0m
 </pre>
@@ -124,7 +190,7 @@ Start test 2?[0m
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at May 5, 2025, 12:02:42 AM</p>
+<a href="https://www.gradle.org">Gradle 8.14</a> at May 6, 2025, 9:26:11 PM</p>
 </div>
 </div>
 </body>

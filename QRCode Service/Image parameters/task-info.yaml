@@ -12,6 +12,30 @@ files:
   - name: test/QRCodeApiTest.java
     visible: false
     learner_created: false
+  - name: src/qrcodeapi/controllers/QRCodeController.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/config/AppConfig.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/shared/ImageType.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/converters/ImageTypeConverter.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exceptions/UnknownImageTypeException.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exceptions/GlobalExceptionHandler.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/advice/QRCodeAdvice.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exceptions/InvalidImageSizeException.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35507#comment
 status: Unchecked
 record: -1
