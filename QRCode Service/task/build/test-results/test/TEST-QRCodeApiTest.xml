@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="QRCodeApiTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-05-06T18:26:04.390Z" hostname="TROPICAL" time="6.71">
+<testsuite name="QRCodeApiTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-05-06T18:53:12.409Z" hostname="TROPICAL" time="3.149">
   <properties/>
-  <testcase name="start" classname="QRCodeApiTest" time="6.71">
-    <failure message="java.lang.AssertionError: Wrong answer in test #2&#10;&#10;Response: GET /api/qrcode?size=150&amp;type=png&#10;&#10;Response body does not contain a correct image:&#10;Expected image hash b67a6f17fe353b997585e65e2903ab7b, but was a370a8d3e1ee0f0184132a3c3b5d2952&#10;Make sure the size, the contents and the format of the image are correct." type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #2
+  <testcase name="start" classname="QRCodeApiTest" time="3.149">
+    <failure message="java.lang.AssertionError: Exception in test #1&#10;&#10;Cannot start Spring application&#10;&#10;org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'&#10;&#9;at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:287)&#10;&#9;at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:467)&#10;&#9;at java.base/java.lang.Iterable.forEach(Iterable.java:75)&#10;&#9;at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:256)&#10;&#9;at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:201)&#10;&#9;at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:965)&#10;&#9;at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)&#10;&#9;at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)&#10;&#9;at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)&#10;&#9;at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)&#10;&#9;at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)&#10;&#9;at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)&#10;&#9;at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)&#10;&#9;at qrcodeapi.Application.main(Application.java:9)" type="java.lang.AssertionError">java.lang.AssertionError: Exception in test #1
 
-Response: GET /api/qrcode?size=150&amp;type=png
+Cannot start Spring application
 
-Response body does not contain a correct image:
-Expected image hash b67a6f17fe353b997585e65e2903ab7b, but was a370a8d3e1ee0f0184132a3c3b5d2952
-Make sure the size, the contents and the format of the image are correct.
+org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:287)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:467)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:256)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:965)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:619)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:455)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:323)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1331)
+	at qrcodeapi.Application.main(Application.java:9)
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:208)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -68,21 +80,32 @@ Start test 1?[0m
 ?[0m?[0;34m =========|_|==============|___/=/_/_/_/
 ?[0m?[0;34m :: Spring Boot ::                (v3.2.0)
 ?[0m?[0;34m
-?[0m?[0;34m2025-05-06T21:26:05.534+03:00  INFO 17592 --- [    Test worker] qrcodeapi.Application                    : Starting Application using Java 17.0.13 with PID 17592 (started by david in C:\Projects\java\QRCode Service\QRCode Service\task)
-?[0m?[0;34m2025-05-06T21:26:05.553+03:00  INFO 17592 --- [    Test worker] qrcodeapi.Application                    : No active profile set, falling back to 1 default profile: "default"
-?[0m?[0;34m2025-05-06T21:26:08.546+03:00  INFO 17592 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-?[0m?[0;34m2025-05-06T21:26:08.561+03:00  INFO 17592 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2025-05-06T21:26:08.562+03:00  INFO 17592 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
-?[0m?[0;34m2025-05-06T21:26:08.647+03:00  INFO 17592 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2025-05-06T21:26:08.651+03:00  INFO 17592 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2995 ms
-?[0m?[0;34m2025-05-06T21:26:10.226+03:00  INFO 17592 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2025-05-06T21:26:10.316+03:00  INFO 17592 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-?[0m?[0;34m2025-05-06T21:26:10.331+03:00  INFO 17592 --- [    Test worker] qrcodeapi.Application                    : Started Application in 5.58 seconds (process running for 6.539)
-?[0;34m2025-05-06T21:26:10.786+03:00  INFO 17592 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2025-05-06T21:26:10.788+03:00  INFO 17592 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2025-05-06T21:26:10.788+03:00  INFO 17592 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-?[0m?[1;31m
-Start test 2?[0m
-]]></system-out>
+?[0m?[0;34m2025-05-06T21:53:12.945+03:00  INFO 17592 --- [    Test worker] qrcodeapi.Application                    : Starting Application using Java 17.0.13 with PID 17592 (started by david in C:\Projects\java\QRCode Service\QRCode Service\task)
+?[0m?[0;34m2025-05-06T21:53:12.948+03:00  INFO 17592 --- [    Test worker] qrcodeapi.Application                    : No active profile set, falling back to 1 default profile: "default"
+?[0m?[0;34m2025-05-06T21:53:14.334+03:00  INFO 17592 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+?[0m?[0;34m2025-05-06T21:53:14.345+03:00  INFO 17592 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2025-05-06T21:53:14.346+03:00  INFO 17592 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+?[0m?[0;34m2025-05-06T21:53:14.400+03:00  INFO 17592 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2025-05-06T21:53:14.401+03:00  INFO 17592 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1415 ms
+?[0m?[0;34m2025-05-06T21:53:15.445+03:00  INFO 17592 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2025-05-06T21:53:15.507+03:00  WARN 17592 --- [    Test worker] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+?[0m?[0;34m2025-05-06T21:53:15.527+03:00  INFO 17592 --- [    Test worker] .s.b.a.l.ConditionEvaluationReportLogger : 
+?[0m?[0;34m
+?[0m?[0;34mError starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+?[0m?[0;34m2025-05-06T21:53:15.547+03:00 ERROR 17592 --- [    Test worker] o.s.b.d.LoggingFailureAnalysisReporter   : 
+?[0m?[0;34m
+?[0m?[0;34m***************************
+?[0m?[0;34mAPPLICATION FAILED TO START
+?[0m?[0;34m***************************
+?[0m?[0;34m
+?[0m?[0;34mDescription:
+?[0m?[0;34m
+?[0m?[0;34mWeb server failed to start. Port 8080 was already in use.
+?[0m?[0;34m
+?[0m?[0;34mAction:
+?[0m?[0;34m
+?[0m?[0;34mIdentify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+?[0m?[0;34m
+?[0m]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

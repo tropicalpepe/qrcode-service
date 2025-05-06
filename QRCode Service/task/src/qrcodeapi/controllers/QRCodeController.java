@@ -25,18 +25,16 @@ public class QRCodeController {
     @GetMapping("/qrcode")
     public ResponseEntity<BufferedImage> qrcode(
             @RequestParam("size") int size,
-            @RequestParam("type") ImageType imageType){
-        System.out.println("Converting: " + imageType);
-
-        BufferedImage bufferedImage = new BufferedImage(250, 250, BufferedImage.TYPE_INT_RGB);
+            @RequestParam("type") ImageType imageType) {
+        BufferedImage bufferedImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_RGB);
         Graphics2D g = bufferedImage.createGraphics();
 
         g.setColor(Color.WHITE);
-        g.fillRect(0,0, 250, 250);
+        g.fillRect(0,0, size, size);
 
         return ResponseEntity
                 .ok()
-                .contentType(MediaType.IMAGE_PNG)
+                .contentType(imageType.getMediaType())
                 .body(bufferedImage);
     }
 }
