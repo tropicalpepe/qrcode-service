@@ -1,9 +1,7 @@
-package qrcodeapi.shared;
+package qrcodeapi.model;
 
 import org.springframework.http.MediaType;
-import qrcodeapi.exceptions.UnknownImageTypeException;
-
-import java.awt.*;
+import qrcodeapi.exception.UnknownImageTypeException;
 
 public enum ImageType {
     PNG("png", MediaType.IMAGE_PNG),

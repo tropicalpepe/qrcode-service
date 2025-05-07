@@ -12,7 +12,7 @@ files:
   - name: build.gradle
     visible: true
     learner_created: false
-  - name: src/qrcodeapi/controllers/QRCodeController.java
+  - name: src/qrcodeapi/controllers/QrCodeController.java
     visible: true
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35505#comment
