@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import qrcodeapi.exception.InvalidCorrectionLevel;
 import qrcodeapi.exception.InvalidImageSizeException;
 import qrcodeapi.exception.MissingContentsException;
+import qrcodeapi.model.CorrectionLevel;
 import qrcodeapi.model.ImageType;
 import qrcodeapi.service.QrCodeService;
 
@@ -30,15 +32,17 @@ public class QrCodeController {
 
     @GetMapping("/qrcode")
     public ResponseEntity<BufferedImage> qrcode(
-            @RequestParam("size") int size,
-            @RequestParam("type") String type,
-            @RequestParam("contents") String contents
+            @RequestParam(name = "size", defaultValue = "250") int size,
+            @RequestParam(name = "type", defaultValue = "png") String type,
+            @RequestParam(name = "contents") String contents,
+            @RequestParam(name = "correction", defaultValue = "L") String correction
             ) {
         assertContentsPresent(contents);
         assertSizeInRange(size);
+        CorrectionLevel correctionLevel = requireCorrectionLevel(correction);
         ImageType imageType = ImageType.fromValue(type);
 
-        BufferedImage bufferedImage = qrCodeService.generateQr(contents, size);
+        BufferedImage bufferedImage = qrCodeService.generateQr(contents, size, correctionLevel);
 
         return ResponseEntity
                 .ok()
@@ -54,6 +58,14 @@ public class QrCodeController {
     private void assertSizeInRange(int size) {
         if (size < 150 || size > 350) {
             throw new InvalidImageSizeException();
+        }
+    }
+
+    private CorrectionLevel requireCorrectionLevel(String correction){
+        try {
+            return CorrectionLevel.valueOf(correction);
+        } catch (IllegalArgumentException iae) {
+            throw new InvalidCorrectionLevel();
         }
     }
 }

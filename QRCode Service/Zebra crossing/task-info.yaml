@@ -39,6 +39,12 @@ files:
   - name: src/qrcodeapi/exception/BadRequestException.java
     visible: true
     learner_created: true
+  - name: src/qrcodeapi/config/AppConfig.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35508#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Wed, 07 May 2025 10:29:32 UTC"
+record: 4

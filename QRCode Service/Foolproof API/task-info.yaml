@@ -12,6 +12,46 @@ files:
   - name: test/QRCodeApiTest.java
     visible: false
     learner_created: false
+  - name: src/qrcodeapi/exception/UnknownImageTypeException.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/config/AppConfig.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/controller/QrCodeController.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exception/BadRequestException.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exception/MissingContentsException.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exception/GlobalExceptionHandler.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exception/QrCodeGenerationError.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exception/InvalidImageSizeException.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/model/ImageType.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/service/QrCodeService.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/model/CorrectionLevel.java
+    visible: true
+    learner_created: true
+  - name: src/qrcodeapi/exception/InvalidCorrectionLevel.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35509#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Fri, 09 May 2025 11:08:04 UTC"
+record: 5
